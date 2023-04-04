@@ -1,0 +1,5 @@
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\APIAutomation\obj\Debug\net6.0\APIAutomation.csproj.AssemblyReference.cache
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\APIAutomation\obj\Debug\net6.0\APIAutomation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\APIAutomation\obj\Debug\net6.0\APIAutomation.AssemblyInfoInputs.cache
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\APIAutomation\obj\Debug\net6.0\APIAutomation.AssemblyInfo.cs
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\APIAutomation\obj\Debug\net6.0\APIAutomation.csproj.CoreCompileInputs.cache

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIAutomation", "APIAutomation\APIAutomation.csproj", "{605A481A-65B3-445D-8EC9-3C454D2BE138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{605A481A-65B3-445D-8EC9-3C454D2BE138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{605A481A-65B3-445D-8EC9-3C454D2BE138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{605A481A-65B3-445D-8EC9-3C454D2BE138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{605A481A-65B3-445D-8EC9-3C454D2BE138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CAF24A4-F34A-410D-B041-9D662FBFE1A9}
+	EndGlobalSection
+EndGlobal
