@@ -12,12 +12,13 @@ namespace APIAutomation
     {// IDisposable bellek/kaynak yönetimi yapmak için kullanılan bir arayüzdür. bellekte jalmasını engelleyerek siler
        // Var anahtarı, değişken tanımı yaparken tür belirtmeksizin tanım yapmamızı sağlamaktadır.
         readonly RestClient client;
-        public APIClient(string baseUrl)
+         const string BASE_URL= "https://reqres.in/";
+        public APIClient()
         {
-            var options = new RestClientOptions(baseUrl);//3 aşırı yükleyiciyyi yönetiriz
+            var options = new RestClientOptions(BASE_URL);//3 aşırı yükleyiciyyi yönetiriz
             client = new RestClient(options)
             {//doğrulama burada
-                A = new APIAuthenticator();
+                Authenticator = new APIAuthenticator()
             };
             
         }    

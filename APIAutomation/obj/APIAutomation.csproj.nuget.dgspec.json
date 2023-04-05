@@ -46,7 +46,19 @@
             },
             "RestSharp": {
               "target": "Package",
-              "version": "[109.0.1, )"
+              "version": "[108.0.3, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.NUnit": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.9.74, )"
             }
           },
           "imports": [
