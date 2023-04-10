@@ -1,50 +1,38 @@
-﻿using APIAutomation;
-using APIAutomation.Models.Request;
-using APIAutomation.Models.Response.Utility;
-using APIAutomation.Models.Response;
+﻿using ApiAutomation;
+using ApiAutomation.Models.Request;
+using ApiAutomation.Models.Response.Utility;
+using ApiAutomation.Models.Response;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
-
-using APIAutomation;
-using APIAutomation.Models;
-using APIAutomation.Models.Request;
-using System;
-using System.Diagnostics;
 using System.Net;
 using TechTalk.SpecFlow;
-
+//feature de bir özellik tablosu oluştururuz açıklaması özellikleri test senaryolarımızı tanımlayabiliriz ve tüm bu adımları işler.
+//ve adımları burda oluşturu
 namespace APITests.Features
 {
     [Binding]
     public class CreateUserSteps
     {
-        private CreateUserReq createUserReq;
-        private RestResponse response;
-        private ScenarioContext scenarioContext;
-        private HttpStatusCode statusCode;
-        /* private const string BASE_URL = "https://reqres.in/";
-         private readonly CreateUserReq createUserReq;
-         private RestResponse response;*/
-      //  private readonly CreateUserReq createUserReq;
-        public CreateUserSteps(CreateUserReq createUserReq, ScenarioContext scenarioContext)
+        private CreateUserReq createUserReq;//kullanıcı isteği oluşturmak için
+        private RestResponse response;//restşarpdan cevap almak için
+        private ScenarioContext scenarioContext;//senaryo bağıntısı specflowla adımlar hakkında bilgiye sahiptir
+        private HttpStatusCode statusCode;//durum kodu yaptıl
+        private APIClient api;//api istemcisinin bişr nesnesine erşimek için 
+       
+        public CreateUserSteps(CreateUserReq createUserReq, ScenarioContext scenarioContext)//kullanıcı isteği ve senaryo eklendi
         {
             this.createUserReq = createUserReq;//kullanıcı isteği oluştururr
             this.scenarioContext= scenarioContext;
+            api= new APIClient();
         }
 
-        [Given(@"User with name ""(.*)""")]
-        public void GivenUserWithName(string name)
+        [Given(@"User payload ""(.*)""")]
+        public void GivenUserPayload()
         {
-            createUserReq.name = name;
-        }
-
-
-
-        
-        [Given(@"user with job ""(.*)""")]
-        public void GivenUserWithJob(string job)
-        {
-            createUserReq.job = job;
+            string file = HandleContent.GetFilePath();
+            var payload = HandleContent.ParseJson<CreateUserReq>(file);//?
+          // payload.name = "";//payloadda bir güncelleme yapmak istiyorsak kullanırız
+            scenarioContext.Add("createUser_payload", payload);//basit bir yük lakin tanımlayabilmemiz için farklı bir ad tutuyoruz
         }
 
 
@@ -52,22 +40,27 @@ namespace APITests.Features
         [When(@"Send request to create user")]
         public async System.Threading.Tasks.Task WhenSendRequestToCreateUser()
         {
-            var api = new APIClient();
+         createUserReq = scenarioContext.Get<CreateUserReq>("createUser_payload");//özellik dosyaının adını jsona pass ediyorum sonra yükü ppaylaşarak senaryoyya alıyorum
+            var api = new APIClient();//api istemicisi oluşturmam gerekir
             response = await api.CreateUser<CreateUserReq>(createUserReq);
         }
         
-        [Then(@"validate user is created")]
+        [Then(@"Validate user is created")]
         public void ThenValidateUserIsCreated()
-        {
+        {//yanıttan durum kodunu alabiliriz
              
             statusCode = response.StatusCode;
             var code = (int)statusCode;
-            Assert.AreEqual(201, code);
+            Assert.That(code, Is.EqualTo(201));
             //özellik dosyasını oluşturabiliriz
+            //kuulanıcı yanıt oluştururr ve yanıtı buradan ilet nesne olarak döndür
+
             var content = HandleContent.GetContent<CreateUserRes>(response);
-            Assert.AreEqual(createUserReq.name, content.name);
+            //özellik dosyasının beklenenen değerşeri sunucuya gönderdiğimizi şeyi alıcaz
+           
+            Assert.That(content.name, Is.EqualTo(createUserReq.name));
             Assert.AreEqual(createUserReq.job, content.job);
 
-        }
+        } 
     }
 }

@@ -24,7 +24,7 @@ namespace APIAutomation
         }    
         
         
-        public async Task<RestResponse> CreateUser<T>(Task payload) where T : class
+        public async Task<RestResponse> CreateUser<T>(T payload) where T : class
         {
             //talep yaratmalıyız
             var request = new RestRequest(Endpoints.CREATE_USER, Method.Post);

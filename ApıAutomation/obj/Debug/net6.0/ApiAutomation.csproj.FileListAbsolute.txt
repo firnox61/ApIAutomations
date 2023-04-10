@@ -1,0 +1,13 @@
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\bin\Debug\net6.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\bin\Debug\net6.0\ApiAutomation.deps.json
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\bin\Debug\net6.0\ApiAutomation.dll
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\bin\Debug\net6.0\ApiAutomation.pdb
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.csproj.AssemblyReference.cache
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.AssemblyInfoInputs.cache
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.AssemblyInfo.cs
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.csproj.CoreCompileInputs.cache
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.dll
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\refint\ApiAutomation.dll
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ApiAutomation.pdb
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\ApıAutomation\obj\Debug\net6.0\ref\ApiAutomation.dll
