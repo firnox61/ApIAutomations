@@ -27,11 +27,11 @@ namespace APITests.Features
         }
 
         [Given(@"User payload ""(.*)""")]
-        public void GivenUserPayload()
+        public void GivenUserPayload(string filename)
         {
-            string file = HandleContent.GetFilePath();
+            string file = HandleContent.GetFilePath(filename);
             var payload = HandleContent.ParseJson<CreateUserReq>(file);//?
-          // payload.name = "";//payloadda bir güncelleme yapmak istiyorsak kullanırız
+            payload.name = "";//payloadda bir güncelleme yapmak istiyorsak kullanırız
             scenarioContext.Add("createUser_payload", payload);//basit bir yük lakin tanımlayabilmemiz için farklı bir ad tutuyoruz
         }
 
