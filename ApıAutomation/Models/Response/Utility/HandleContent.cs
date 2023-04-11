@@ -23,19 +23,14 @@ namespace ApiAutomation.Models.Response.Utility
             return JsonConvert.DeserializeObject<T>(File.ReadAllText(file));//veri aktarım nesnesi içinokuma türü ne olursa olsun
 
         }
-       /* public static string GetFilePath(string name)//feature i payloada dönüştürdük ve dosya yolunu belirtmemiz gerekiyor
+        public static string GetFilePath(string name)//feature i payloada dönüştürdük ve dosya yolunu belirtmemiz gerekiyor
         {
             string path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory));
              path = string.Format(path + @"TestData\\{0}", name);//dosya yolunu belirtiyoruz ve adı yanına ekliyoruz
             //path = string.Format(path + @"TestData\\CreateUser.json");
             return path;
-        }*/
-       public static string GetFilePath()
-        {
-            string path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory));
-            path = string.Format(path + @"C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\Feature\TestData\CreateUser.json");
-            return path;
         }
+      
     }
     
 }
