@@ -22,7 +22,7 @@ namespace ApiAutomation
             var options = new RestClientOptions(BASE_URL);//3 aşırı yükleyiciyyi yönetiriz
             client = new RestClient(options)
             {//Kimlik doğrulama burada belirteç oluşturmaktan sorumlu
-                Authenticator = new APIAuthenticator()
+               // Authenticator = new APIAuthenticator()
             };
             
         }    

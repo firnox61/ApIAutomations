@@ -8,7 +8,7 @@ C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\nun
 C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\nunit.engine.api.dll
 C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\nunit.engine.core.dll
 C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\testcentric.engine.metadata.dll
-C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\Feature\TestData\CreateUser.json
+C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\TestData\CreateUser.json
 C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\Test.deps.json
 C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\Test.runtimeconfig.json
 C:\Users\firno\Documents\MvcDersleri2022\APIAutomation\Test\bin\Debug\net6.0\Test.dll

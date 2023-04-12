@@ -1,11 +1,11 @@
 ﻿using ApiAutomation;
 using ApiAutomation.Models.Request;
-using ApiAutomation.Models.Response.Utility;
 using ApiAutomation.Models.Response;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System.Net;
 using TechTalk.SpecFlow;
+using ApiAutomation.Utility;
 //feature de bir özellik tablosu oluştururuz açıklaması özellikleri test senaryolarımızı tanımlayabiliriz ve tüm bu adımları işler.
 //ve adımları burda oluşturu
 namespace APITests.Features
@@ -41,7 +41,7 @@ namespace APITests.Features
         public async System.Threading.Tasks.Task WhenSendRequestToCreateUser()
         {
          createUserReq = scenarioContext.Get<CreateUserReq>("createUser_payload");//özellik dosyaının adını jsona pass ediyorum sonra yükü ppaylaşarak senaryoyya alıyorum
-            var api = new APIClient();//api istemicisi oluşturmam gerekir
+           // var api = new APIClient();//api istemicisi oluşturmam gerekir
             response = await api.CreateUser<CreateUserReq>(createUserReq);
         }
         
@@ -57,8 +57,8 @@ namespace APITests.Features
 
             var content = HandleContent.GetContent<CreateUserRes>(response);
             //özellik dosyasının beklenenen değerşeri sunucuya gönderdiğimizi şeyi alıcaz
-           
-            Assert.That(content.name, Is.EqualTo(createUserReq.name));
+
+            Assert.AreEqual(createUserReq.name, content.name);
             Assert.AreEqual(createUserReq.job, content.job);
 
         } 
