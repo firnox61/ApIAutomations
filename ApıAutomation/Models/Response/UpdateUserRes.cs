@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ApiAutomation.Models.Response
 {
 
-    public class UpdateUser
+    public class UpdateUserRes
     {
         public string name { get; set; }
         public string job { get; set; }

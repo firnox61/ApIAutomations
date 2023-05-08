@@ -23,7 +23,7 @@ namespace APITests.Features
         {
             this.createUserReq = createUserReq;//kullanıcı isteği oluştururr
             this.scenarioContext= scenarioContext;
-            api= new APIClient();
+            api= new APIClient();//Base urli çekiyoruz
         }
 
         [Given(@"User payload ""(.*)""")]
@@ -31,7 +31,7 @@ namespace APITests.Features
         {
             string file = HandleContent.GetFilePath(filename);
             var payload = HandleContent.ParseJson<CreateUserReq>(file);//?
-            payload.name = "";//payloadda bir güncelleme yapmak istiyorsak kullanırız
+            payload.name = "";//payloadda bir güncelleme yapmak istiyorsak kullanırız isim ve iş gözüküyor
             scenarioContext.Add("createUser_payload", payload);//basit bir yük lakin tanımlayabilmemiz için farklı bir ad tutuyoruz
         }
 
@@ -59,7 +59,7 @@ namespace APITests.Features
             //özellik dosyasının beklenenen değerşeri sunucuya gönderdiğimizi şeyi alıcaz
 
             Assert.AreEqual(createUserReq.name, content.name);
-            Assert.AreEqual(createUserReq.job, content.job);
+            Assert.AreEqual(createUserReq.job, content.job);//id conte
 
         } 
     }

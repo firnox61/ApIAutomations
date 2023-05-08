@@ -28,7 +28,7 @@ namespace ApiAutomation.Utility
             string path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory));
             path = string.Format(path + @"TestData\\{0}", name);//dosya yolunu belirtiyoruz ve adı yanına ekliyoruz
             //path = string.Format(path + @"TestData\\CreateUser.json");
-            return path;
+            return path;//4çentik oluştu
         }
 
     }

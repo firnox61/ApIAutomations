@@ -22,7 +22,7 @@ namespace ApiAutomation
             var options = new RestClientOptions(BASE_URL);//3 aşırı yükleyiciyyi yönetiriz
             client = new RestClient(options)
             {//Kimlik doğrulama burada belirteç oluşturmaktan sorumlu
-               // Authenticator = new APIAuthenticator()
+                //Authenticator = new APIAuthenticator()
             };
             
         }    
@@ -35,7 +35,15 @@ namespace ApiAutomation
             request.AddBody(payload);//bu istek payload gerektirir
             return await client.ExecuteAsync<T>(request);//ve yanıtı döndürürüzb böylece müşteri senkronizasyon yöntemi görürür
         }
-
+        public async Task<RestResponse> UpdateUser<T>(T payload, string id) where T : class
+        {//gövdeyi eklemeliyiz
+            var request = new RestRequest(Endpoints.UPDATE_USER, Method.Put);
+            request.AddUrlSegment(id,id);//kullanıcı kimliğinin dinamik değerini kulllanmalıyız
+                                          //ve isteğe url segment yollamamız gerekir
+            request.AddBody(payload);//yükü buraya ilettik
+            return await client.ExecuteAsync<T>(request);
+            //CreateUser ve update işlemlerinde payload kullandık
+        }
         public async Task<RestResponse> DeleteUser(string id)
         {//kullanıcı kimliğini dinamik kullanmamaız için url segment kullandık
             var request=new RestRequest(Endpoints.DELETE_USER, Method.Delete);
@@ -69,14 +77,6 @@ namespace ApiAutomation
             return await client.ExecuteAsync(request);
         }
 
-        public async Task<RestResponse> UpdateUser<T>(T payload, string id) where T : class
-        {//gövdeyi eklemeliyiz
-            var request = new RestRequest(Endpoints.UPDATE_USER, Method.Put);
-            request.AddUrlSegment(id, id);//kullanıcı kimliğinin dinamik değerini kulllanmalıyız
-                                          //ve isteğe url segment yollamamız gerekir
-            request.AddBody(payload);//yükü buraya ilettik
-            return await client.ExecuteAsync<T>(request);
-            //CreateUser ve update işlemlerinde payload kullandık
-        }
+
     }
 }
